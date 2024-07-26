@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">YouTube Sentiment Analysis</h1>
+        <form method="post" class="mt-4">
+            <div class="form-group">
+                <label for="video_url">YouTube Video URL:</label>
+                <input type="text" id="video_url" name="video_url" class="form-control" required placeholder="Enter YouTube Video URL">
+            </div>
+            <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+        
+        {% if video_details %}
+            <div class="mt-5">
+                <h2>{{ video_details.title }}</h2>
+                <img src="{{ video_details.thumbnail }}" alt="Video Thumbnail" style="max-width: 100%; height: auto;">
+                <p>{{ video_details.description }}</p>
+            </div>
+        {% endif %}
+        
+        {% if error %}
+            <p class="text-danger mt-3">{{ error }}</p>
+        {% endif %}
+        
+        {% if img_base64 %}
+            <div class="mt-5">
+                <h2>Sentiment Analysis Results</h2>
+                <img src="data:image/png;base64,{{ img_base64 }}" alt="Sentiment Analysis Plot" style="max-width: 100%; height: auto;">
+                <ul class="list-group mt-3">
+                    {% for sentiment, count in sentiments.items() %}
+                        <li class="list-group-item">{{ sentiment }}: {{ count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
