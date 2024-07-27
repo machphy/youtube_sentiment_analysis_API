@@ -48,8 +48,6 @@ Sentiment Analysis is a popular application of Natural Language Processing (NLP)
 <br>
 
 
-
-
 <br>
 
 ## Important Information
@@ -96,10 +94,14 @@ The project uses pre-trained models for sentiment analysis. Here’s a brief ove
 - Enhancing visualizations with interactive charts.
 
 <br>
-# rajeev@2024 
 
-<br> 
 ## Thank You!
 Thank you for exploring the project. **I hope you find it useful**. 
 
 If you did, please consider **giving a star**⭐ to this repository. It would mean a lot!
+
+<br>
+
+---
+
+© 2024 Rajeev Sharma | [rajeevsharmamachphy@gmail.com](mailto:rajeevsharmamachphy@gmail.com)
