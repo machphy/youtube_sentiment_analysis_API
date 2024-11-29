@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:;">
+    <meta name="X-Content-Type-Options" content="nosniff">
     <title>YouTube Sentiment Analysis</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
@@ -12,7 +14,7 @@
         <form method="post" class="mt-4">
             <div class="form-group">
                 <label for="video_url">YouTube Video URL:</label>
-                <input type="text" id="video_url" name="video_url" class="form-control" required placeholder="Enter YouTube Video URL">
+                <input type="url" id="video_url" name="video_url" class="form-control" required placeholder="Enter YouTube Video URL" pattern="https?://(?:www\.)?youtube\.com/watch\?v=[\w-]{11}">
             </div>
             <button type="submit" class="btn btn-primary">Analyze</button>
         </form>
@@ -41,5 +43,10 @@
             </div>
         {% endif %}
     </div>
+
+    <!-- Include JS libraries at the end for better performance -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
